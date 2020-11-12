@@ -70,6 +70,13 @@ case "$FILERESPONSE" in
                 changedir
                 unzip "$FILE"
                 ;;
+        *"POSIX tar archive"*)
+                FILETYPE="tar"
+                TARARG=""
+                changedir
+                extraction
+                echo "Extracted $FILE to $DESTINATION"
+                ;;
         *)
                 echo "Unknown filetype selected."
 esac
